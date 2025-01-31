@@ -32,13 +32,14 @@ Este projeto foi desenvolvido seguindo a metodologia do CRISP-DM (Cross-Industry
 * [1. Descrição e Problema de Negócio](#1-descrição-e-problema-de-negócio)
 * [2. Base de Dados](#2-base-de-dados)
 * [3. Estratégia de Solução](#3-estratégia-de-solução)
-* [4. Exploration Data Analysis](#4-exploration-data-analysis)
-* [5. Seleção do Modelo de Machine Learning](#5-seleção-do-modelo-de-machine-learning)
-* [6. Performance do Modelo](#6-performance-do-modelo)
-* [7. Resultados de Negócio](#7-resultados-de-negócio)
-* [8. Modelo em Produção](#8-modelo-em-produção)
-* [9. Conclusão](#9-conclusão)
-* [10. Aprendizados e Trabalhos Futuros](#10-aprendizados-e-trabalhos-futuros)
+* [4. Featuring Engineering](#4-featuring-engineering)
+* [5. Análise Exploratória dos Dados](#5-análise-exploratória-dos-dados)
+* [6. Seleção do Modelo de Machine Learning](#6-seleção-do-modelo-de-machine-learning)
+* [7. Performance do Modelo](#7-performance-do-modelo)
+* [8. Resultados de Negócio](#8-resultados-de-negócio)
+* [9. Modelo em Produção](#9-modelo-em-produção)
+* [10. Conclusão](#10-conclusão)
+* [11. Aprendizados e Trabalhos Futuros](#11-aprendizados-e-trabalhos-futuros)
 
 # 1. Descrição e Problema de Negócio
 
@@ -112,3 +113,36 @@ O desempenho do modelo foi analisado do ponto de vista do impacto no negócio, t
 O modelo foi colocado em produção em um ambiente de nuvem (Render), permitindo que ele fosse acessado por diferentes usuários ou serviços, facilitando o processo de tomada de decisão no negócio.
 ### Etapa 11: Criação de um Bot no Telegram
 Foi desenvolvido um bot no Telegram, permitindo que as previsões pudessem ser acessadas a qualquer hora e de qualquer lugar, bastando para isso uma conexão à internet e o aplicativo instalado no celular.
+
+# 4. Featuring Engineering
+
+Nesta etapa, novas variáveis foram criadas para capturar padrões temporais e melhorar a qualidade dos dados utilizados no modelo. Essas variáveis ajudam a destacar tendências sazonais e o impacto de diferentes períodos no volume de vendas.
+
+Foram extraídas informações como:
+* Dia, mês e ano das vendas para identificar variações sazonais.
+* Semana do ano para capturar eventos recorrentes e feriados.
+* Transformações temporais, como a criação de variáveis cíclicas (seno e cosseno) para representar padrões semanais e mensais de forma contínua.
+
+### 4.1. Mapeamento de Hipóteses
+
+Antes da modelagem, foi feita uma análise detalhada dos fatores que influenciam as vendas. Para isso, um mapa mental foi estruturado, organizando hipóteses que relacionam variáveis como promoções, sazonalidade, concorrência e comportamento dos consumidores.
+
+<div align="center">
+<img src="img/MindMapHypothesis.png" />
+</div>
+
+# 5. Análise Exploratória dos Dados
+
+### 5.1. Análise Univariada
+
+Para compreender melhor o comportamento das variáveis do conjunto de dados, foi realizada uma Análise Univariada, que permite observar a distribuição individual de cada variável e identificar padrões, outliers e tendências relevantes.
+
+A análise das variáveis numéricas foi feita por meio de histogramas, que mostram a distribuição dos valores no dataset. Esses gráficos ajudam a identificar:
+
+* Padrões de distribuição, como dados concentrados em certos intervalos.
+* Presença de outliers, que podem impactar a modelagem.
+* Assimetria dos dados, indicando possíveis transformações necessárias.
+
+A visualização dessas distribuições auxilia na preparação dos dados e na definição de estratégias para tratamento de valores extremos e normalização das variáveis.
+
+### 5.2. Análise Bivariada
