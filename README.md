@@ -145,6 +145,10 @@ A análise das variáveis numéricas foi feita por meio de histogramas, que most
 
 A visualização dessas distribuições auxilia na preparação dos dados e na definição de estratégias para tratamento de valores extremos e normalização das variáveis.
 
+<div align="center">
+<img src="img/analise_numerica.png" />
+</div>
+
 ### 5.2. Análise Bivariada
 
 Após a formulação das hipóteses no mapa mental, foi realizada a análise bivariada, que examina a relação entre a variável resposta (vendas) e as variáveis explicativas, como promoções, sazonalidade e concorrência.
