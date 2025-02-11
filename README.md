@@ -146,3 +146,77 @@ A análise das variáveis numéricas foi feita por meio de histogramas, que most
 A visualização dessas distribuições auxilia na preparação dos dados e na definição de estratégias para tratamento de valores extremos e normalização das variáveis.
 
 ### 5.2. Análise Bivariada
+
+Após a formulação das hipóteses no mapa mental, foi realizada a análise bivariada, que examina a relação entre a variável resposta (vendas) e as variáveis explicativas, como promoções, sazonalidade e concorrência.
+
+Essa análise permitiu validar ou refutar as hipóteses iniciais, fornecendo insights valiosos sobre o comportamento das vendas. Alguns dos principais achados foram:
+
+### 5.3. Análise Multivariada
+
+A análise multivariada foi realizada para identificar quais variáveis possuem maior impacto na previsão das vendas e entender as relações entre elas. Esse processo é essencial para evitar multicolinearidade, ou seja, quando duas ou mais variáveis explicativas estão altamente correlacionadas, o que pode distorcer a interpretação do modelo.
+
+# 6. Seleção do Modelo de Machine Learning
+
+Para prever as vendas das lojas Rossmann, foram testados diferentes algoritmos de Machine Learning, variando desde modelos mais simples até técnicas avançadas de aprendizado de máquina.
+
+* __Mean Average Model__ (Baseline): Modelo simples que calcula a média das vendas passadas e serve como referência para avaliar o desempenho dos modelos mais complexos.
+* __Regressão Linear__: Modelo estatístico que busca uma relação linear entre as variáveis explicativas e a variável resposta (vendas).
+* __Regressão Linear Regularizada - Lasso__: Variante da regressão linear que adiciona uma penalização (L1) para reduzir a complexidade do modelo e evitar overfitting.
+* __Random Forest Regressor__: Algoritmo baseado em árvores de decisão que combina várias árvores para aumentar a precisão e robustez da previsão.
+* __XGBoost Regressor__: Um dos modelos mais poderosos e eficientes para previsão, baseado em Gradient Boosting, que otimiza o aprendizado através da minimização do erro em sucessivas iterações.
+
+Além disso, foi utilizada a técnica de Cross-Validation para validar a performance de todos os modelos e garantir que as previsões fossem generalizáveis, reduzindo o risco de overfitting.
+
+# 7. Performance do Modelo
+
+Para avaliar a qualidade dos modelos preditivos, foram utilizadas métricas como __MAPE (Mean Absolute Percentage Error)__, que mede o erro médio percentual das previsões em relação aos valores reais.
+
+O RandomForestRegressor apresentou o melhor desempenho em Single Performance, com um erro médio (MAPE) de aproximadamente 10%.
+
+No entanto, a escolha final foi pelo XGBoost Regressor, pois sua performance foi equivalente à do RandomForest, mas com vantagens adicionais:
+
+* Melhor escalabilidade para grandes volumes de dados.
+* Treinamento mais rápido devido ao seu eficiente processo de Gradient Boosting.
+* Menor consumo de memória, tornando-o mais adequado para uso em produção.
+
+Com isso, o XGBoost foi implementado como o modelo final para previsão das vendas, garantindo precisão e eficiência computacional.
+
+### Comparação de Desempenho dos Modelos  
+
+| Modelo                     | MAE (Erro Absoluto Médio) | MAPE (Erro Percentual Médio) | RMSE (Raiz do Erro Quadrático Médio) |
+|----------------------------|--------------------------|-----------------------------|--------------------------------------|
+| **Regressão Linear**       | 1867.09                  | 29.27%                      | 2671.05                              |
+| **Regressão Linear - Lasso** | 1891.70                  | 28.91%                      | 2744.45                              |
+| **Random Forest Regressor** | 679.60                   | 9.99%                       | 1011.11                              |
+| **XGBoost Regressor**       | 1694.95                  | 25.17%                      | 2477.85                              |
+
+### Performance dos Modelos com Cross-Validation  
+
+| Modelo                     | MAE CV (Erro Absoluto Médio)        | MAPE CV (Erro Percentual Médio)    | RMSE CV (Raiz do Erro Quadrático Médio)  |
+|----------------------------|-----------------------------------|----------------------------------|--------------------------------------|
+| **Regressão Linear**       | 2081.73 ± 295.63                 | 30% ± 2%                        | 2952.52 ± 468.37                    |
+| **Regressão Linear - Lasso** | 2116.38 ± 341.5                  | 29% ± 1%                        | 3057.75 ± 504.26                    |
+| **Random Forest Regressor** | 836.61 ± 217.1                  | 12% ± 2%                        | 1254.3 ± 316.17                     |
+| **XGBoost Regressor**       | 1860.91 ± 291.37                 | 25% ± 1%                        | 2685.66 ± 429.14                    |
+
+### Ajuste de Hiperparâmetros (Hyperparameter Fine-Tuning)  
+
+Após a escolha do **XGBoost Regressor**, foi realizada a etapa de **Hyperparameter Fine-Tuning**, utilizando o método **Random Search** para encontrar os melhores parâmetros de treino e maximizar a performance do modelo.  
+
+Os hiperparâmetros otimizados incluem:  
+**Número de árvores (`n_estimators`)**: *2500*  
+**Taxa de aprendizado (`eta`)**: *0.03*  
+**Profundidade máxima das árvores (`max_depth`)**: *9*  
+**Amostragem de instâncias (`subsample`)**: *0.5*  
+**Colunas amostradas por árvore (`colsample_bytree`)**: *0.9*  
+**Peso mínimo para divisão (`min_child_weight`)**: *15*  
+
+Após a otimização, os **resultados finais do modelo XGBoost** foram:  
+
+### **Desempenho Final do Modelo**  
+
+| Modelo               | MAE (Erro Absoluto Médio) | MAPE (Erro Percentual Médio) | RMSE (Raiz do Erro Quadrático Médio) |
+|----------------------|--------------------------|------------------------------|--------------------------------------|
+| **XGBoost Regressor** | **632.87**               | **9.13%**                    | **929.02**                          |
+
+O ajuste dos hiperparâmetros resultou em uma **redução significativa do erro**, tornando o modelo XGBoost mais preciso e eficiente para prever as vendas das lojas Rossmann.
