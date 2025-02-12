@@ -165,6 +165,83 @@ Isso pode ser explicado pelo fato de que essas lojas estão localizadas em área
 <img src="img/hypotheses2.png" />
 </div>
 
+#### H3. Lojas com competidores à mais tempo deveriam vendem mais.
+
+**FALSA Lojas com COMPETIDORES À MAIS TEMPO vendem MENOS.**
+
+Isso pode ocorrer porque, ao longo do tempo, os clientes podem migrar para os concorrentes, especialmente se eles oferecerem preços mais competitivos, variedade de produtos ou melhores experiências de compra. Além disso, mudanças no mercado e novas estratégias da concorrência podem impactar negativamente o desempenho das lojas da Rossmann.
+
+<div align="center">
+<img src="img/hypotheses3.png" />
+</div>
+
+#### H7. Lojas abertas durante o feriado de Natal deveriam vender mais.
+
+**FALSA Lojas abertas durante o feriado do Natal vendem MENOS.**
+
+Isso pode ser explicado pelo fato de que, durante o feriado, muitos clientes antecipam suas compras, reduzindo a demanda no próprio dia de Natal. Além disso, a cultura local e hábitos de consumo podem influenciar esse comportamento, já que muitas pessoas preferem passar o feriado em casa, em vez de irem às compras.
+
+<div align="center">
+<img src="img/hypotheses7.png" />
+</div>
+
+#### H8. Lojas deveriam vender mais ao longo dos anos.
+
+**FALSA Lojas vendem menos ao longo dos anos**
+
+Esse declínio pode estar relacionado a fatores como mudanças no comportamento do consumidor, aumento da concorrência e impacto do comércio eletrônico, que vem ganhando espaço e reduzindo o fluxo de clientes nas lojas físicas. Além disso, crises econômicas e variações no poder de compra podem ter afetado a demanda ao longo do tempo.
+
+<div align="center">
+<img src="img/hypotheses8.png" />
+</div>
+
+#### H9. Lojas deveriam vender mais no segundo semestre do ano.
+
+**FALSA Lojas vendem menos no segundo semestre do ano**
+
+Esse resultado pode estar relacionado ao fato de que muitos clientes realizam compras maiores no início do ano, aproveitando promoções pós-festas e reajustes salariais. Além disso, fatores como redução do consumo após férias de verão, incertezas econômicas e menor frequência de promoções podem ter impactado negativamente o desempenho das lojas na segunda metade do ano.
+
+<div align="center">
+<img src="img/hypotheses9.png" />
+</div>
+
+#### H10. Lojas deveriam vender mais depois do dia 10 de cada mês.
+
+**VERDADEIRA Lojas vendem mais depois do dia 10 de cada mês.**
+
+Isso pode estar diretamente ligado ao calendário financeiro dos consumidores, já que muitas pessoas recebem seus salários entre os dias 5 e 10 do mês. Após esse período, há um aumento no poder de compra, resultando em um maior volume de vendas nas lojas. Esse comportamento reforça a importância de ações promocionais estratégicas logo após essa data, para potencializar os ganhos da empresa.
+
+<div align="center">
+<img src="img/hypotheses10.png" />
+</div>
+
+#### H11. Lojas deveriam vender menos aos finais de semana.
+
+**VERDADEIRA Lojas vendem menos nos final de semana.**
+
+Isso pode estar relacionado a mudanças nos hábitos de consumo, onde os clientes tendem a realizar compras maiores durante a semana e evitam ir às lojas nos finais de semana. Além disso, fatores como horários reduzidos de funcionamento, menor fluxo comercial em determinadas regiões e preferência por compras online ou em grandes mercados podem contribuir para essa queda nas vendas.
+
+<div align="center">
+<img src="img/hypotheses11.png" />
+</div>
+
+### Tabela de Insights 
+
+| Hipóteses | Condição| Relevância |
+| :-------- | :------- | :--------  |
+|H1. Lojas com maior sortimento deveriam vender mais|Falsa|Baixa|
+|H2. Lojas com competidores mais próximos deveriam vender menos.|Falsa|Média|
+|H3. Lojas com competidores à mais tempo deveriam vender mais.|Falsa|Média|
+|H4. Lojas com promoções mais ativas por mais tempo deveriam vender mais.|Falsa|Baixa|
+|H5. Lojas com mais dias de promoção deveriam vender mais.| --- |---|
+|H6. Lojas com mais promoções consecutivas deveriam vender mais.|Falsa|Baixa|
+|H7. Lojas abertas durante o feriado de Natal deveriam vender mais|Falsa|Média|
+|H8. Lojas deveriam vender mais ao longo dos anos.|Falsa|Alta|
+|H9. Lojas deveriam vender mais no segundo semestre do ano.|Falsa|Alta|
+|H10 .Lojas deveriam vender mais depois do dia 10 de cada mês.|Verdadeira|Alta|
+|H11 .Lojas deveriam vender menos aos finais de semana.|Verdadeira|Alta|
+|H12 .Lojas deveriam vender menos durante os feriados escolares.|Verdadeira|Baixa|
+
 ### 5.3. Análise Multivariada
 
 A análise multivariada foi realizada para identificar quais variáveis possuem maior impacto na previsão das vendas e entender as relações entre elas. Esse processo é essencial para evitar multicolinearidade, ou seja, quando duas ou mais variáveis explicativas estão altamente correlacionadas, o que pode distorcer a interpretação do modelo.
@@ -238,3 +315,42 @@ Após a otimização, os **resultados finais do modelo XGBoost** foram:
 | **XGBoost Regressor** | **632.87**               | **9.13%**                    | **929.02**                          |
 
 O ajuste dos hiperparâmetros resultou em uma **redução significativa do erro**, tornando o modelo XGBoost mais preciso e eficiente para prever as vendas das lojas Rossmann.
+
+# 8. Resultados de Negócio
+
+Após a aplicação do ciclo inicial do CRISP-DM, foi estimado que as 1115 lojas da Rossmann alcançarão um faturamento aproximado de $283 milhões nas próximas 6 semanas, com uma margem de erro de 9,13%. Além disso, foram projetados possíveis melhores e piores cenários de faturamento.
+
+| Cenário           | Valores (R$)          |
+|------------------|----------------------|
+| **Previsões**    | **R$ 283.360.736,00** |
+| **Pior Cenário** | **R$ 282.650.949,27** |
+| **Melhor Cenário** | **R$ 284.070.491,40** |
+
+O **modelo XGBoost apresentou um bom desempenho**, sendo capaz de prever as vendas com alta precisão. No entanto, algumas lojas tiveram um **MAPE acima da média**, indicando que certos pontos de venda são mais desafiadores de prever do que outros.  
+
+<div align="center">
+<img src="img/MAPE.png" />
+</div>
+
+**Evolução das Previsões**:
+- O **1º gráfico** mostra as vendas reais (linhas azuis) e as previsões do modelo (linhas laranjas). O modelo acompanha bem as tendências do mercado, garantindo previsões confiáveis.  
+- O **2º gráfico** apresenta a taxa de erro das previsões, demonstrando que os valores previstos estão dentro de uma margem aceitável.  
+- O **3º gráfico** exibe a distribuição dos erros, que segue um comportamento próximo de uma distribuição normal, com tendência central em 0.  
+- O **4º gráfico** demonstra a dispersão dos erros, idealmente concentrada em uma faixa estreita, representando baixa variação entre os valores reais e previstos.
+
+<div align="center">
+<img src="img/graphs1_2.png" />
+</div>
+<div align="center">
+<img src="img/graphs3_4.png" />
+</div>
+
+Com essa análise, podemos concluir que o **modelo XGBoost é uma solução eficiente para previsão de vendas** e pode ser utilizado para otimizar o planejamento estratégico da Rossmann. 
+
+# 9. Modelo em Produção
+
+O modelo de Machine Learning foi colocado em produção na nuvem e, para facilitar o acesso à previsão de vendas das lojas para as próximas 6 semanas, foi criado um BOT no Telegram. Esse BOT permite que o CEO e a equipe de negócios consultem as informações de forma simples e direta, utilizando apenas um smartphone.
+
+<div align="center">
+<img src="img/telegram-img.jpg" width="300" />
+</div>
