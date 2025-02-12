@@ -155,9 +155,23 @@ Após a formulação das hipóteses no mapa mental, foi realizada a análise biv
 
 Essa análise permitiu validar ou refutar as hipóteses iniciais, fornecendo insights valiosos sobre o comportamento das vendas. Alguns dos principais achados foram:
 
+#### H2. Lojas com competidores mais próximos deveriam vender menos.
+
+**FALSA Lojas com COMPETIDORES MAIS PROXIMOS vendem MAIS.**
+
+Isso pode ser explicado pelo fato de que essas lojas estão localizadas em áreas de maior fluxo de clientes, onde a presença de múltiplas opções pode atrair mais consumidores e aumentar o volume de compras.
+
+<div align="center">
+<img src="img/hypotheses2.png" />
+</div>
+
 ### 5.3. Análise Multivariada
 
 A análise multivariada foi realizada para identificar quais variáveis possuem maior impacto na previsão das vendas e entender as relações entre elas. Esse processo é essencial para evitar multicolinearidade, ou seja, quando duas ou mais variáveis explicativas estão altamente correlacionadas, o que pode distorcer a interpretação do modelo.
+
+<div align="center">
+<img src="img/analise_multivariada.png" />
+</div>
 
 # 6. Seleção do Modelo de Machine Learning
 
