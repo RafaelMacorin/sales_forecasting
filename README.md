@@ -354,3 +354,32 @@ O modelo de Machine Learning foi colocado em produção na nuvem e, para facilit
 <div align="center">
 <img src="img/telegram-img.jpg" width="300" />
 </div>
+
+# 10. Conclusão
+
+Neste projeto, foi aplicado todas as etapas fundamentais de um fluxo completo de Ciência de Dados, seguindo a metodologia CRISP-DM, desde o entendimento do problema até a implementação de um modelo preditivo. O objetivo principal era desenvolver um modelo capaz de prever as vendas diárias das lojas Rossmann para as próximas 6 semanas, ajudando na tomada de decisões estratégicas.
+
+Através da Análise Exploratória de Dados (EDA), foram extraídos diversos insights valiosos, como o impacto das promoções, a influência dos feriados nas vendas e o efeito da concorrência no faturamento das lojas. Esses achados foram essenciais para a construção do modelo e para guiar o planejamento estratégico da empresa.
+
+Após testar diferentes algoritmos, o modelo XGBoost Regressor foi escolhido por apresentar um bom equilíbrio entre performance, escalabilidade e eficiência computacional. Com MAPE médio de aproximadamente 9%, o modelo mostrou-se confiável para previsão de vendas. As previsões finais indicaram um faturamento estimado de R$ 283 milhões no período analisado.
+
+Além disso, o modelo foi disponibilizado de forma acessível, permitindo que as previsões sejam consultadas de maneira rápida e eficiente. Esse resultado mostra como a Ciência de Dados pode impactar diretamente o negócio, auxiliando na alocação de recursos, planejamento de estoque e estratégias promocionais.
+
+# 11. Aprendizados e Trabalhos Futuros
+
+## 11.1. Aprendizados
+
+- Modelos preditivos devem considerar não apenas a precisão, mas também a escalabilidade e aplicabilidade em produção. O XGBoost foi escolhido justamente por atender bem esses critérios.
+- A Análise Exploratória de Dados (EDA) foi essencial para identificar padrões e validar hipóteses. Muitos insights encontrados ajudaram a aprimorar o modelo e a entender melhor o comportamento das lojas.
+- A escolha das features tem um impacto direto no desempenho do modelo, e técnicas de Feature Engineering foram fundamentais para otimizar a qualidade das previsões.
+
+## 11.2. Trabalhos Futuros
+
+- Aprofundar a análise das lojas com maiores taxas de erro, podendo desenvolver um modelo específico para elas.
+- Criar novas variáveis (features) a partir de correlações fortes, buscando melhorar ainda mais a performance do modelo.
+- Testar métodos alternativos de Encoding para variáveis categóricas, a fim de verificar se melhoram os resultados.
+- Realizar um novo ajuste de hiperparâmetros (Fine-Tuning) para tentar reduzir ainda mais o erro do modelo.
+- Explorar diferentes abordagens de Machine Learning, como LSTM (Redes Neurais Recorrentes) para séries temporais.
+- Expandir a usabilidade da previsão, integrando-a em um sistema ou aplicação móvel para facilitar o acesso por parte dos gestores da Rossmann.
+
+ Com essas melhorias, o modelo poderá atingir um nível de precisão ainda maior, garantindo previsões mais assertivas e um impacto direto na tomada de decisões estratégicas.
